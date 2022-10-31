@@ -96,5 +96,7 @@ squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged
 
 // Checking for matches
 
+// Some code Feature 1
+
 
 })
