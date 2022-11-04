@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 const grid = document.querySelector('.grid');
+const scoreDisplay = document.getElementById('score')
 const width = 8;
 const squares = [];
 let score = 0;
 
 
 const candyColors = [
-    'red',
-    'yellow',
-    'orange',
-    'purple',
-    'green',
-    'blue'
-]
-
+    'url(images/red-candy.png)',
+    'url(images/yellow-candy.png)',
+    'url(images/orange-candy.png)',
+    'url(images/purple-candy.png)',
+    'url(images/green-candy.png)',
+    'url(images/blue-candy.png)'
+  ]
 //Create Board
 function createBoard(){
     for(let i = 0; i < width*width; i++){
@@ -99,7 +99,13 @@ function moveDown(){
     for(i = 0; i< 55; i++){
         if(squares[i + width].style.backgroundColor === ''){
             squares[i + width].style.backgroundColor = squares[i].style.backgroundColor;
-            squares[i].style.backgroundColor = ''
+            squares[i].style.backgroundColor = '';
+            const firstRow = [0, 1, 2, 3, 4, 5, 6, 7]
+            const isFirstRow = firstRow.includes(i)
+            if(isFirstRow && squares[i].style.backgroundColor === ''){
+                let randomColor = Math.floor(Math.random() * candyColors.length)
+                squares[i].style.backgroundColor = candyColors[randomColor]
+            }
         }
     }
 }
@@ -121,6 +127,7 @@ for(i = 0; i < 61; i++){
 
     if(rowOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)){
         score += 3;
+        scoreDisplay.innerHTML = score
         rowOfThree.forEach(index => {
             squares[index].style.backgroundColor = '';
         })
@@ -144,6 +151,7 @@ function checkColumnForThree(){
     
         if(columnOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)){
             score += 3;
+            scoreDisplay.innerHTML = score
             columnOfThree.forEach(index => {
                 squares[index].style.backgroundColor = '';
             })
@@ -172,6 +180,7 @@ function checkRowForFour(){
     
         if(rowOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)){
             score += 4;
+            scoreDisplay.innerHTML = score
             rowOfFour.forEach(index => {
                 squares[index].style.backgroundColor = '';
             })
@@ -195,6 +204,7 @@ function checkRowForFour(){
         
             if(columnOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)){
                 score += 4;
+                scoreDisplay.innerHTML = score
                 columnOfFour.forEach(index => {
                     squares[index].style.backgroundColor = '';
                 })
