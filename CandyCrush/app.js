@@ -94,7 +94,15 @@ squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged
 }
 
 
-
+// drop candies once some habe been cleared
+function moveDown(){
+    for(i = 0; i< 55; i++){
+        if(squares[i + width].style.backgroundColor === ''){
+            squares[i + width].style.backgroundColor = squares[i].style.backgroundColor;
+            squares[i].style.backgroundColor = ''
+        }
+    }
+}
 
 
 
@@ -201,14 +209,13 @@ function checkRowForFour(){
 
 
         window.setInterval(function(){
+            moveDown()
             checkRowForFour()
             checkColumnForFour()
             checkRowForThree()
             checkColumnForThree()
         }, 100)
 
-
-// Some code Feature 1
 
 
 })
