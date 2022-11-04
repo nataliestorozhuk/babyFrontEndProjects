@@ -222,5 +222,5 @@ document.addEventListener('DOMContentLoaded', () => {
         checkColumnForFour()
         checkRowForThree()
         checkColumnForThree()
-    }, 100)
+    }, 100) //change to 200
 })
