@@ -1,21 +1,20 @@
-
-.grid{
-    height:560px;
+.grid {
+    height: 560px;
     width: 560px;
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
     flex-wrap: wrap;
     margin-left: 80px;
     margin-top: 50px;
     background-color: rgba(109, 127, 151, 0.5);
-    padding:5px;
+    padding: 5px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
     color: #85796b;
 }
 
 
-.grid div{
+.grid div {
     height: 70px;
     width: 70px;
 }
@@ -25,8 +24,7 @@
 }
 
 body {
- background-color: pink;
-  max-width: 100vh;
-  display: flex;
+   background-color: pink;
+    max-width: 100vh;   
+    display: flex;
 }
-
