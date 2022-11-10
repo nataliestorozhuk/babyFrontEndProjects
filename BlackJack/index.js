@@ -12,7 +12,7 @@ function StartGame() {
   }
 }
 
-//StartGame();
+StartGame();
 
 function createDeck() {
 VALUES.forEach((value) => {
