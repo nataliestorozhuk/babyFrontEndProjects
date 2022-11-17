@@ -1,11 +1,15 @@
-const VALUES = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 'Seven',
-                'Six', 'Five', 'Four', 'Three', 'Two'];
-const SUITS = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
+// global data
 const deck = [];
 let player = '';
 let computer = '';
 let computerScore = 0;
 let playerScore = 0;
+
+
+//card variables
+const VALUES = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 'Seven',
+                'Six', 'Five', 'Four', 'Three', 'Two'];
+const SUITS = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 
 
 
@@ -20,9 +24,12 @@ function StartGame() {
 
 //StartGame();
 
+
+//create a deck
 function createDeck() {
   VALUES.forEach((value) =>{
     SUITS.forEach((suit) =>{
+      
       const card = value + "-" +  suit;   
       deck.push(card);
     })
@@ -32,6 +39,8 @@ function createDeck() {
 
 console.log(createDeck());
 
+
+//shuffle a deck of cards
 function shuffleDeck(deck) {
   for (let i = 0; i < 52; i++) {
     let tempCard = deck[i];
@@ -45,7 +54,7 @@ shuffleDeck(deck);
 console.log(deck);
 
 
-function drawCards() {
+/*function drawCards() {
   
    for (let i = 0; i < 4; i++){
   if(i <= 1){
@@ -57,18 +66,27 @@ function drawCards() {
    console.log("Computer: " + computer);
 }
 drawCards();
+*/
 
-function getPlayerHand(player){
-  player.proto.
+function getCardString(card) {
+  return card.value + " of " + card.suit;
 }
 
+function getNextCard() {
+  return deck.shift();
+}
+
+
+console.log("Players cards: ");
+console.log(playerCards = [getNextCard(), getNextCard()]);
+console.log("Dealers cards: ");
+console.log(computerCards = [getNextCard(), getNextCard()]);
 
 
 
 function getScore(cards){
   let score = 0;
   for(let card of cards){
-
     if(card === "King"){
       score +=10;
     }else if(card === "Queen"){
