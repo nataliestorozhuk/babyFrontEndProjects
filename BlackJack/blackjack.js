@@ -1,15 +1,17 @@
 // global data
-const deck = [];
-let player = '';
-let computer = '';
+let gameOver = false;
+let playerCards = [];
+let computerCards = [];
 let computerScore = 0;
 let playerScore = 0;
+let deck = [];
 
 
 //card variables
-const VALUES = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 'Seven',
-                'Six', 'Five', 'Four', 'Three', 'Two'];
-const SUITS = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
+let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight', 'Seven',
+  'Six', 'Five', 'Four', 'Three', 'Two'];
+let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
+
 
 
 
@@ -18,29 +20,33 @@ function StartGame() {
   input = prompt("Welcome to Blackjack. Do you want to play? (Y)es or (N)o").toUpperCase();
 
   if (input == 'Y') {
-    console.log("Game starting...")
+
+
   }
 }
 
 //StartGame();
 
 
-//create a deck
+
+
 function createDeck() {
-  VALUES.forEach((value) =>{
-    SUITS.forEach((suit) =>{
-      
-      const card = value + "-" +  suit;   
+
+  for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
+    for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
+      let card = {
+        suit: suits[suitIdx],
+        value: values[valueIdx]
+      };
       deck.push(card);
-    })
-  })
+    }
+  }
   return deck;
 }
 
+createDeck();
 console.log(createDeck());
 
-
-//shuffle a deck of cards
 function shuffleDeck(deck) {
   for (let i = 0; i < 52; i++) {
     let tempCard = deck[i];
@@ -48,29 +54,11 @@ function shuffleDeck(deck) {
     deck[i] = deck[randomIndex];
     deck[randomIndex] = tempCard;
   }
- }
+}
 
 shuffleDeck(deck);
 console.log(deck);
 
-
-/*function drawCards() {
-  
-   for (let i = 0; i < 4; i++){
-  if(i <= 1){
-    player += deck[i] + ' ';
-     }else
-    computer += deck[i] + ' ';
-}
-  console.log("Player: " + player);
-   console.log("Computer: " + computer);
-}
-drawCards();
-*/
-
-function getCardString(card) {
-  return card.value + " of " + card.suit;
-}
 
 function getNextCard() {
   return deck.shift();
@@ -84,69 +72,76 @@ console.log(computerCards = [getNextCard(), getNextCard()]);
 
 
 
-function getScore(cards){
+function getCardNumericValue(card) {
+
+  switch (card.values) {
+    case "Ace":
+      return 1;
+    case "Two":
+      return 2;
+    case "Three":
+      return 3;
+    case "Four":
+      return 4;
+    case "Five":
+      return 5;
+    case "Six":
+      return 6;
+    case "Seven":
+      return 7;
+    case "Eight":
+      return 8;
+    case "Nine":
+      return 9;
+    default:
+      return 10;
+  }
+}
+
+
+function getScore(cardArray) {
   let score = 0;
-  for(let card of cards){
-    if(card === "King"){
-      score +=10;
-    }else if(card === "Queen"){
-      score += 10;
-    }else if(card === "Jack"){
-      score += 10;
-    }else if(card === "Ace"){
-      score += 1;
-    }else {
-      score += parseInt(cards);
+  let hasAce = false;
+  for (let i = 0; i < cardArray.length; i++) {
+    let card = cardArray[i];
+    score += getCardNumericValue(card);
+    if (card.value == 'Ace') {
+      hasAce = true;
+    }
+
+    if (hasAce && score + 10 <= 21) {
+      return score + 10;
     }
   }
   return score;
 }
 
+console.log(getScore(playerCards));
+console.log(getScore(computerCards));
 
 
 
-
-function getCardNumberValue(){
-  let score = 0;
-  switch(VALUES){
-    case 'Ace':
-      return score = 1;
-      break;
-    case 'Two':
-      return  score = 2;
-      break;
-    case 'Three':
-      return score = 3;
-      break;
-    case 'Four':
-      return score = 4;
-      break;
-    case 'Five':
-      return score = 5;
-      break;
-    case 'Six':
-      return score = 6;
-      break;
-    case 'Seven':
-      return score = 7;
-      break;
-    case 'Eight':
-      return score = 8;
-      break;
-    case 'Nine':
-      return score = 9;
-      break;
-    case 'Ten':
-      return score = 10;
-      break;
-    case 'Jack':
-      return score = 10;
-      break;
-    case 'Queen':
-       return score = 10;
-      break;
-    case 'King':
-      return  score = 10;
-  }
- 
+function updateScores() {
+  computerScore = getScore(computerCards);
+  playerScore = getScore(playerCards);
 }
+
+
+
+function getCardString(card) {
+  return card.value + " of " + card.suit;
+}
+
+function showStatus() {
+
+  let dealerCardString = '';
+  for (let i = 0; i < computerCards.length; i++) {
+    dealerCardString += getCardString(computerCards[i]) + computerScore + '\n';
+  }
+  let playerCardString = '';
+  for (let i = 0; i < playerCards.length; i++) {
+    playerCardString += getCardString(playerCards[i]) + playerScore + '\n';
+  }
+  updateScores();
+}
+showStatus();
