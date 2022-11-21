@@ -74,7 +74,7 @@ console.log(computerCards = [getNextCard(), getNextCard()]);
 
 function getCardNumericValue(card) {
 
-  switch (card.values) {
+  switch (card.value) {
     case "Ace":
       return 1;
     case "Two":
@@ -105,7 +105,7 @@ function getScore(cardArray) {
   for (let i = 0; i < cardArray.length; i++) {
     let card = cardArray[i];
     score += getCardNumericValue(card);
-    if (card.value == 'Ace') {
+    if (card.value === 'Ace') {
       hasAce = true;
     }
 
@@ -136,12 +136,14 @@ function showStatus() {
 
   let dealerCardString = '';
   for (let i = 0; i < computerCards.length; i++) {
-    dealerCardString += getCardString(computerCards[i]) + computerScore + '\n';
+    dealerCardString += getCardString(computerCards[i]) + ' ';
+
   }
   let playerCardString = '';
-  for (let i = 0; i < playerCards.length; i++) {
-    playerCardString += getCardString(playerCards[i]) + playerScore + '\n';
+  for (let j = 0; j < playerCards.length; j++) {
+    playerCardString += getCardString(playerCards[j]) + ' ';
   }
-  updateScores();
+  console.log("Dealer: " + dealerCardString + " " + getScore(computerCards));
+  console.log("Player: " + playerCardString + " " + getScore(playerCards));
 }
 showStatus();
