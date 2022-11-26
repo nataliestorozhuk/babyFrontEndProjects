@@ -24,7 +24,7 @@
 }
 
 body {
-   background-color: pink;
+   background-color: rgb(213, 192, 192);
     max-width: 100vh;   
     display: flex;
 }
