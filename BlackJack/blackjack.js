@@ -136,14 +136,14 @@ function showStatus() {
 
   let dealerCardString = '';
   for (let i = 0; i < computerCards.length; i++) {
-    dealerCardString += getCardString(computerCards[i]) + ' ';
+    dealerCardString += getCardString(computerCards[i]) + ' and ';
 
   }
   let playerCardString = '';
   for (let j = 0; j < playerCards.length; j++) {
-    playerCardString += getCardString(playerCards[j]) + ' ';
+    playerCardString += getCardString(playerCards[j]) + ' and ';
   }
-  console.log("Dealer: " + dealerCardString + " " + getScore(computerCards));
-  console.log("Player: " + playerCardString + " " + getScore(playerCards));
+  console.log("Dealer: " + dealerCardString + " " + getScore(computerCards) + " points.");
+  console.log("Player: " + playerCardString + " " + getScore(playerCards)  + " points.");
 }
 showStatus();
