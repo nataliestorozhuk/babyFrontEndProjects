@@ -149,15 +149,21 @@ function showStatus() {
 showStatus();
 
 
-function hitOrStand(){
-  let input;
-input = prompt("Do you want to (H)it or (S)tand?").toUpperCase();
+function hitOrStand() {
 
-if (input == 'H') {
-playerCards = [getNextCard()];
-playerScore = getScore(playerCards);  
-}
-if(input == 'S'){
+  let userInput = "h";
+  
+
+if(userInput === "h"){
+
+    playerCards.push(getNextCard());
+    // playerScore = getScore(playerCards);  
+    getScore(playerCards);
+    console.log("Player: " + playerCardString + " " + getScore(playerCards) + " points.");
+}else{
+  
   conslole.log("You hit stand!");
 }
 }
+
+hitOrStand();
