@@ -144,25 +144,27 @@ function showStatus() {
     playerCardString += getCardString(playerCards[j]) + ' and ';
   }
   console.log("Dealer: " + dealerCardString + " " + getScore(computerCards) + " points.");
-  console.log("Player: " + playerCardString + " " + getScore(playerCards)  + hitOrStand() + " points.");
+  console.log("Player: " + playerCardString + " " + getScore(playerCards) + hitOrStand() + " points.");
 }
 showStatus();
 
 
 function HitOrStand() {
-
   let userInput;
 
-  userInput = prompt("Do you want to (H)it or (S)tand?").toUpperCase();
+  do {
+    userInput = prompt("Do you want to (H)it or (S)tand?").toUpperCase();
 
-  if (userInput === "H") {
+    if (userInput === "H") {
 
-    playerCards.push(getNextCard());
-    showStatus();
+      playerCards.push(getNextCard());
+      showStatus();
 
-  } else {
-    console.log("You hit stand!");
+    } else {
+      console.log("You hit stand!");
+    }
   }
+  while (userInput !== "S");
 }
 
 HitOrStand();
