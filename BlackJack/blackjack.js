@@ -149,7 +149,7 @@ function showStatus() {
 showStatus();
 
 
-function HitOrStand() {
+/*function HitOrStand() {
   let userInput;
 
   do {
@@ -167,5 +167,17 @@ function HitOrStand() {
   while (userInput !== "S");
 }
 
-HitOrStand();
+HitOrStand();*/
 
+
+
+function Check(){
+
+  if(getScore(playerCards) == 21){
+    console.log("Player Wins!");
+  }
+  else if(getScore(playerCards) > 21)
+    console.log("Player Busted");
+  }
+  
+  Check();
