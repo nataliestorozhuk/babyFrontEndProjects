@@ -149,7 +149,7 @@ function showStatus() {
 showStatus();
 
 
-/*function HitOrStand() {
+function HitOrStand() {
   let userInput;
 
   do {
@@ -158,26 +158,32 @@ showStatus();
     if (userInput === "H") {
 
       playerCards.push(getNextCard());
+      check();
       showStatus();
 
-    } else {
-      console.log("You hit stand!");
+
+    } else if (userInput === "S") {
+      computerCards.push(getNextCard());
+
+      showStatus();
     }
   }
+
   while (userInput !== "S");
+
+
 }
 
-HitOrStand();*/
+HitOrStand();
 
 
 
-function Check(){
+function check() {
 
-  if(getScore(playerCards) == 21){
+  if (getScore(playerCards) == 21) {
     console.log("Player Wins!");
   }
-  else if(getScore(playerCards) > 21)
+  else if (getScore(playerCards) > 21)
     console.log("Player Busted");
-  }
-  
-  Check();
+  StartGame();
+}
