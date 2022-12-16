@@ -14,7 +14,7 @@ let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 
 
 
-
+// Start game function
 function StartGame() {
   let input;
   input = prompt("Welcome to Blackjack. Do you want to play? (Y)es or (N)o").toUpperCase();
@@ -29,7 +29,7 @@ function StartGame() {
 
 
 
-
+// Create deck of cards function
 function createDeck() {
 
   for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
@@ -47,6 +47,7 @@ function createDeck() {
 createDeck();
 console.log(createDeck());
 
+// SHuffle deck of the cards function
 function shuffleDeck(deck) {
   for (let i = 0; i < 52; i++) {
     let tempCard = deck[i];
@@ -59,7 +60,7 @@ function shuffleDeck(deck) {
 shuffleDeck(deck);
 console.log(deck);
 
-
+// Get next card function
 function getNextCard() {
   return deck.shift();
 }
