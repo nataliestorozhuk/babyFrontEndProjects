@@ -61,7 +61,7 @@ nav button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     margin-top: 10px;
 }
@@ -78,7 +78,7 @@ nav button {
     margin-bottom: 20px;
 }
 
-.email-signup{
+.email-signup {
     background: white;
     border-radius: 4px;
     display: flex;
@@ -87,14 +87,14 @@ nav button {
     overflow: hidden;
 }
 
-.email-signup input{
+.email-signup input {
     flex: 1;
     border: 0;
     outline: 0;
     margin-left: 20px;
 }
 
-.email-signup button{
+.email-signup button {
     background: #db0001;
     border: 0;
     outline: 0;
@@ -102,4 +102,20 @@ nav button {
     font-size: 16px;
     cursor: pointer;
     padding: 15px 30px;
+}
+
+/*---------------------features----------------*/
+
+.features {
+    padding: 50px 12%;
+    font-size: 22px;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 0; 
+
 }
