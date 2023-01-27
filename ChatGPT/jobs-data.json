@@ -1,0 +1,26 @@
+{
+    "featuredJobs": [
+      {
+        "title": "Full Stack Developer",
+        "company": "XYZ Inc.",
+        "location": "New York, NY",
+        "type": "Full-time",
+        "applyLink": "https://www.xyzinc.com/careers/full-stack-developer"
+      },
+      {
+        "title": "Front-end Engineer",
+        "company": "ABC Corp.",
+        "location": "San Francisco, CA",
+        "type": "Part-time",
+        "applyLink": "https://www.abccorp.com/careers/front-end-engineer"
+      },
+      {
+        "title": "DevOps Engineer",
+        "company": "DEF Ltd.",
+        "location": "Seattle, WA",
+        "type": "Full-time",
+        "applyLink": "https://www.defltd.com/careers/devops-engineer"
+      }
+    ]
+  }
+  
