@@ -11,7 +11,7 @@ const handleClick = (e) =>{
 
 choices.forEach(choice => {
    const button = document.createElement('button')
-   button.innerHTML = choice
+   button.innerHTML = choice 
    button.addEventListener('click', handleClick)
    choicesDisplay.appendChild(button)
 })
