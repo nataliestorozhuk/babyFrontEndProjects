@@ -1,0 +1,163 @@
+/*Where to find diff. fonts*/
+/*https://fonts.google.com/specimen/Source+Code+Pro?query=source*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Source+Code+Pro:wght@200;300;400;500&display=swap');
+
+
+body {
+    background-color: rgb(67, 160, 71);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-family: 'Fredoka One', cursive;
+}
+
+p {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.help {
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: rgba(255, 255, 255, 0.8) solid 1px;
+}
+
+.app {
+    display: flex;
+}
+
+#instruction {
+    padding: 30px;
+    width: 50%;
+}
+
+.editor {
+    position: relative;
+    background-color: rgb(224, 224, 224);
+    height: 260px;
+    padding: 10px 10px 10px 40px;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(119, 119, 119);
+    overflow: hidden;
+}
+
+.line-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(153, 153, 153);
+    color: rgb(213, 213, 213);
+    padding: 10px 6px;
+    height: 100%;
+    text-align: right;
+}
+
+pre {
+    margin: 0;
+}
+
+textarea {
+    height: 44px;
+    border: none;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    margin-left: 26px;
+    width: 90%;
+}
+
+button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background-color: rgb(209, 22, 6);
+    border: none;
+    border-radius: 4px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+}
+
+#pond {
+    position: relative;
+    background-color: rgb(31, 87, 104);
+    width: 50vw;
+    height: 50vw;
+    border-bottom-left-radius: 30px;
+    overflow: hidden;
+    min-width: 300px;
+    min-height: 300px;
+    max-height: 100vh;
+    max-width: 100vh;
+}
+
+#forefront {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+    display: flex;
+}
+
+#background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.lily-container, .frog-container{
+    width: 20%;
+    height: 20%;
+}
+
+.lily, .frog {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.lily.green {
+    background-image: url('images/lilypad-green.svg');
+}
+
+.lily.red {
+    background-image: url('images/lilypad-red.svg');
+}
+
+.lily.yellow {
+    background-image: url('images/lilypad-yellow.svg');
+}
+
+.frog.green {
+    background-image: url('images/frog-green.svg');
+}
+
+.frog.red {
+    background-image: url('images/frog-red.svg');
+}
+
+.frog.yellow {
+    background-image: url('images/frog-yellow.svg');
+}
+
+
