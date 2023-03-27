@@ -1,3 +1,23 @@
+#gamesboard-container{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-board{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    /*will spread all the divs*/
+    flex-wrap: wrap;
+}
+
+.block{
+    width: 20px;
+    height: 20px;    
+}
+
+
 .option-container{
     width: 500px;
     height: 60px;
@@ -56,3 +76,15 @@ background-color: brown;
     height: 10px;
     margin: 3px
 }
+
+.hover{
+    background-color: grey;
+}
+
+.boom{
+    background-color: red;
+}
+
+.empty{
+    background-color: grey;
+} 
