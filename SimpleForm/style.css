@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+    
+}
+form{
+    border: 1px solid navy;
+    border-radius: 15px;
+    width: 350px;
+    background-color: beige;
+}
+div{
+    margin: 15px;
+}
+
+button{
+margin-left: 20px;
+margin-bottom: 10px;
+padding: 7px 7px 7px 7px;
+background-color: rgb(59, 200, 59);
+border-radius: 4px;
+border: none;
+color: white;
+}
